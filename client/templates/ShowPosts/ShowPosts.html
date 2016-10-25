@@ -1,0 +1,15 @@
+<template name="ShowPosts">
+	<div class="col-xs-12">
+		{{#each posts}}
+			{{>ShowPost}}
+		{{/each}}	
+	</div>
+</template>
+
+<template name="ShowPost">
+	<div class="col-xs-12 col-md-6 col-lg-4">
+		<h2 class="text-center text-capitalize">{{Title}}</h2>
+		<p class="text-center">{{Message}}</p>
+		<button class="btn btn-default center-block"><span class="glyphicon glyphicon-heart-empty"></span> Like</button>
+	</div>	
+</template>

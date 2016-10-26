@@ -16,6 +16,9 @@
 					<li class="active"><a href="/">Home</a></li>
 					<li><a href="/addpost">Add Post</a></li>
 					<li><a href="/showposts">Show Posts</a></li>
+					{{#if isInRole 'admin'}}
+						<li><a href="/admin">Admin Panel</a></li>
+					{{/if}}
 					<li>{{> loginButtons}}</li>
 				</ul>
 			</div> 

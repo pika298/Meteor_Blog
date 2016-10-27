@@ -1,4 +1,4 @@
-Template.AddPost.events({
+Template.AdminAddPost.events({
 	'submit #addPost': function(){
 		event.preventDefault();
 

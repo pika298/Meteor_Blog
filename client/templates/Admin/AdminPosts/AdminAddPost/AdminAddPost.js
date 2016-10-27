@@ -1,3 +1,4 @@
+// check server/publish/PostsPublish.js
 Template.AdminAddPost.events({
 	'submit #addPost': function(){
 		event.preventDefault();

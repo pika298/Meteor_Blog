@@ -8,4 +8,20 @@
 			<p class="text-center">{{Message}}</p>
 		</div>
 	</div>	
+
+	<div class="col-xs-12">
+	{{#if currentUser}}
+		{{> AddComment}}
+	{{else}}
+		<h2 class="text-center">You need to login in order to submit comment!</h2>	
+	{{/if}}	
+	</div>
+
+	<div class="col-xs-12">
+		<ul class="list-group">
+			{{#each comments}}
+				{{> SingleComment}}
+			{{/each}}	
+		</ul>
+	</div>
 </template>

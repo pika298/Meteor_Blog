@@ -5,9 +5,11 @@ Template.AddPost.events({
 		var title = event.target.postTitle.value;
 		var message = event.target.postMessage.value;
 
-		Posts.insert({
-			Title: title,
-			Message: message
+		Meteor.call('addPost', title, message, function (error) {	
+			if (!error) {
+				Router.go('/showposts');				
+			}		
 		});
+
 	}
 });

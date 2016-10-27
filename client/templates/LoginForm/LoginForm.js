@@ -7,5 +7,18 @@ Template.LoginForm.events({
 
 		Meteor.loginWithPassword(username, password);
 
+	},
+	'submit #registerForm': function () {
+		event.preventDefault();
+
+		var username = event.target.RegUsername.value;
+		var email = event.target.RegEmail.value;
+		var password = event.target.RegPassword.value;
+
+		Accounts.createUser({
+			email: email,
+			password: password,
+			profile:{name:username}
+		});
 	}
 });

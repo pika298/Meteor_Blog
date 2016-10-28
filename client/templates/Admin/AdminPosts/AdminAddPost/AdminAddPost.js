@@ -5,8 +5,13 @@ Template.AdminAddPost.events({
 
 		var title = event.target.postTitle.value;
 		var message = event.target.postMessage.value;
+		// summernote API
+		var postBody = $('#summernote').summernote('code');
 
-		Meteor.call('addPost', title, message, function (error) {	
+		// console.log(postBody);
+
+
+		Meteor.call('addPost', title, message, postBody, function (error) {	
 			if (!error) {
 				Router.go('/showposts');				
 			}		
@@ -14,3 +19,15 @@ Template.AdminAddPost.events({
 
 	}
 });
+
+// everytime when template rendered
+// active summernote text editor
+// https://atmospherejs.com/summernote/summernote
+
+Template.AdminAddPost.onRendered(function () {
+	$(document).ready(function() {
+	  $('#summernote').summernote();
+	});
+});
+
+

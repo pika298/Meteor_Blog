@@ -3,9 +3,11 @@
 		<table class="table table-hover">
 			<thead>
 				<tr class="row">
-					<td>Title</td>
-					<td>Action</td>
-					<td>Post Message</td>
+					<th>Title</th>
+					<th>Action</th>
+					<th>Post Message</th>
+					<th>Post Body</th>
+					<th>Post CreatedAt</th>
 				</tr>
 			</thead>
 
@@ -15,6 +17,9 @@
 						<td>{{Title}}</td>
 						<td><button class="btn btn-danger" id="deletePost">Delete</button> <button class="btn btn-warning" id="editPost">Edit</button></td>
 						<td>{{Message}}</td>
+						<!-- {{{XXX}}} mean we want blaze not to escape HTML5 tags!!! -->
+						<td>{{{Body}}}</td>
+						<td>{{CreatedAt}}</td>
 					</tr>
 				{{/each}}
 			</tbody>

@@ -1,11 +1,18 @@
 <template name="SinglePost">
 	<div class="col-xs-12">
-		<div class="panel panel-title">
-			<h2 class="text-capitalize text-center">{{Title}}</h2>
-		</div>
+		<div class="panel-group">
+			<div class="panel panel-title">
+				<h2 class="text-capitalize text-center">{{Title}}</h2>
+			</div>
 
-		<div class="panel panel-body">
-			<p class="text-center">{{Message}}</p>
+			<!--{{{XXX}}} means we want to use blaze not to escape HTML5 tags!!!-->
+			<div class="panel panel-body">
+				<p class="text-center">{{{Body}}}</p>
+			</div>
+
+			<div class="panel panel-footer">
+				<h4> Created at {{CreatedAt}}</h4>
+			</div>
 		</div>
 	</div>	
 
